@@ -1,0 +1,93 @@
+:root{
+  --bg:#0f172a;
+  --card:#0b1220;
+  --accent:#f59e0b;
+  --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg, #071028 0%, #041022 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.app{
+  width:100%;
+  max-width:520px;
+  background:var(--card);
+  border-radius:14px;
+  padding:14px;
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+header h1{margin:4px 0 0 0; font-size:20px}
+header .sub{margin:6px 0 12px; color:var(--muted); font-size:13px}
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin-bottom:10px;
+}
+.controls label{font-size:13px; color:var(--muted)}
+.controls .right-label{margin-left:auto}
+#newGame{
+  background:linear-gradient(180deg,var(--accent), #d97706);
+  border:none;
+  color:#041022;
+  padding:8px 10px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.board{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:8px;
+  padding:8px;
+  background:var(--glass);
+  border-radius:12px;
+  user-select:none;
+  touch-action: manipulation;
+}
+
+.cell{
+  aspect-ratio:1/1;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:44px;
+  cursor:pointer;
+  position:relative;
+  transition:transform 0.12s ease;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.cell:active{transform:scale(0.98)}
+.cell img{width:56%; height:56%; object-fit:contain; pointer-events:none}
+
+.status{margin-top:12px; font-size:15px; color:var(--muted)}
+
+footer{margin-top:12px; color:var(--muted); font-size:12px; text-align:center}
+
+/* responsive tweaks */
+@media (max-width:420px){
+  header h1{font-size:18px}
+  .cell{font-size:36px}
+  #newGame{padding:8px}
+}
+

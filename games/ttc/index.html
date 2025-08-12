@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Geocache Tic Tac Toe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Geocache Tic‑Tac‑Toe</h1>
+    <p class="sub">A simple geocaching-themed, mobile-friendly tic tac toe</p>
+  </header>
+
+  <div class="controls">
+    <label>
+      <input type="radio" name="mode" value="pvc" checked> vs Computer
+    </label>
+    <label>
+      <input type="radio" name="mode" value="pvp"> 2 Player
+    </label>
+
+    <label class="right-label">Difficulty:
+      <select id="difficulty">
+        <option value="easy">Easy (random)</option>
+        <option value="medium">Medium (heuristics)</option>
+        <option value="hard">Hard (minimax)</option>
+      </select>
+    </label>
+
+    <button id="newGame">New Game</button>
+  </div>
+
+  <div id="board" class="board" aria-label="Tic tac toe board" role="grid">
+    <!-- cells inserted by JS -->
+  </div>
+
+  <div class="status" id="status" aria-live="polite">Choose mode and press New Game</div>
+
+  <footer>
+    <small>Geocache icons are SVGs included in the package. Mobile-first UI — tap to place.</small>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
