@@ -25,6 +25,14 @@ html, body {
   line-height: 1.6;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 35, 22, 0.6); /* greenish tint overlay */
+  z-index: -1;
+}
+
 /* ===========================
    Header
    =========================== */
