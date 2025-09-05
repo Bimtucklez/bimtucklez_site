@@ -27,9 +27,10 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(15, 35, 22, 0.6); /* greenish tint overlay */
-  pointer-events: none; /* allow clicks through overlay */
+  background: rgba(15, 35, 22, 0.3); /* reduce from 0.6 → 0.3 */
+  pointer-events: none;
 }
+
 
 .app {
   width:100%;
