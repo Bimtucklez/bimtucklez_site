@@ -8,18 +8,27 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
 body{
   margin:0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(180deg, #102510 0%, #1a2e1a 100%);
-  background-image: url('assets/forest_bg.jpg'), linear-gradient(180deg, #102510 0%, #1a2e1a 100%);
+  background: var(--bg) url('/assets/img/forest-bg.jpeg') no-repeat center center fixed;
   background-size: cover;
-  background-blend-mode: overlay;
-  color:#f0f7f0;
+  color: #f0f7f0;
   padding:16px;
   display:flex;
   align-items:center;
   justify-content:center;
+  position: relative; /* needed for overlay */
+}
+
+/* Overlay for washout effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 35, 22, 0.6); /* greenish tint overlay */
+  pointer-events: none; /* allow clicks through overlay */
 }
 
 .app{
@@ -64,6 +73,12 @@ header .sub{
   border-radius:10px;
   font-weight:600;
   cursor:pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+  transition: transform 0.15s ease, background 0.2s ease-in-out;
+}
+#newGame:hover{
+  transform: scale(1.05);
+  background: linear-gradient(180deg, #e0c25a, #c4a437);
 }
 
 .board{
@@ -87,11 +102,12 @@ header .sub{
   font-size:44px;
   cursor:pointer;
   position:relative;
-  transition:transform 0.12s ease;
+  transition: transform 0.12s ease, background 0.2s;
   border:2px solid rgba(255,255,255,0.06);
   box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
 }
 .cell:active{transform:scale(0.98)}
+.cell:hover{background: rgba(255,255,255,0.1)}
 .cell img{
   width:56%;
   height:56%;
