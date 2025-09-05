@@ -31,15 +31,16 @@ body::before {
   pointer-events: none; /* allow clicks through overlay */
 }
 
-.app{
+.app {
   width:100%;
   max-width:520px;
-  background:var(--card);
+  background: rgba(36, 59, 36, 0.9); /* slightly more opaque than current */
   border-radius:14px;
   padding:14px;
   box-shadow: 0 6px 30px rgba(0,0,0,0.6);
   border:2px solid rgba(212,175,55,0.4);
 }
+
 
 header h1{
   margin:4px 0 0 0;
