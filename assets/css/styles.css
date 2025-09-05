@@ -21,7 +21,7 @@ html, body {
   margin: 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
   color: var(--gc-beige);
-  background: var(--gc-darkgreen) url('/assets/img/forest-bg.jpg') no-repeat center center fixed;
+  background: var(--gc-darkgreen) url('/assets/img/forest-bg.jpeg') no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
   position: relative; /* important for overlay layering */
