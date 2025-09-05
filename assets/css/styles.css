@@ -18,19 +18,21 @@
 
 html, body {
   height: 100%;
+  margin: 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
   color: var(--gc-beige);
   background: var(--gc-darkgreen) url('/assets/img/forest-bg.jpg') no-repeat center center fixed;
   background-size: cover;
   line-height: 1.6;
+  position: relative; /* important for overlay layering */
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(15, 35, 22, 0.6); /* greenish tint overlay */
-  z-index: -1;
+  background: rgba(15, 35, 22, 0.6); /* greenish overlay */
+  z-index: -1; /* keeps overlay behind content */
 }
 
 /* ===========================
