@@ -23,16 +23,36 @@ body{
 }
 
 /* Overlay for washout effect */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 35, 22, 0.3); /* reduce from 0.6 → 0.3 */
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg) url('/assets/img/forest-bg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0f7f0;
+  padding: 0; /* remove 16px padding to prevent pushing header down */
+  display: flex;
+  flex-direction: column; /* stack header and app vertically */
+  align-items: center;
+  position: relative;
+}
+
+/* Header at top */
+.site-header {
+  width: 100%;
+  max-width: 520px;
+  position: sticky; /* stays on top when scrolling */
+  top: 0;
+  z-index: 10;
+  background: rgba(36, 59, 36, 0.9);
+  border-radius: 0 0 12px 12px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 
 .app {
+  margin-top: 0;
   width:100%;
   max-width:520px;
   background: rgba(36, 59, 36, 0.9); /* slightly more opaque than current */
