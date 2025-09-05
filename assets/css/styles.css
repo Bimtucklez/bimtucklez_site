@@ -1,10 +1,40 @@
-/* Header */
+/* ===========================
+   Global Styles
+   =========================== */
+:root {
+  --gc-green: #3a6b35;
+  --gc-darkgreen: #21412b;
+  --gc-lightgreen: #6fa86a;
+  --gc-brown: #5a4632;
+  --gc-beige: #f5f2e9;
+  --gc-accent: #f2c94c; /* geocache yellow */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--gc-beige);
+  background: var(--gc-darkgreen) url('/assets/img/forest-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Header
+   =========================== */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1c3320;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(33, 65, 43, 0.85);
+  border-bottom: 2px solid var(--gc-green);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -13,61 +43,161 @@
 .brand {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
-  color: #fff;
-  font-size: 1.2rem;
+  color: var(--gc-accent);
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .brand__icon {
-  fill: none;
-  stroke: #8fcb8c;
-  stroke-width: 2;
   width: 24px;
   height: 24px;
-  margin-right: 0.5rem;
+  fill: none;
+  stroke: var(--gc-accent);
+  stroke-width: 2;
 }
 
-/* Nav menu */
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.menu {
-  position: relative;
-}
-
-.menu summary {
+/* ===========================
+   Navigation
+   =========================== */
+.nav summary {
   cursor: pointer;
-  color: #8fcb8c;
-  font-size: 1rem;
+  color: var(--gc-beige);
+  font-weight: 600;
 }
 
 .menu__list {
-  position: absolute;
-  right: 0;
-  top: 2rem;
   list-style: none;
-  background: #1c3320;
-  border: 1px solid #2a4f2a;
-  margin: 0;
   padding: 0.5rem;
-  display: none;
-}
-
-.menu[open] .menu__list {
-  display: block;
+  margin: 0;
+  background: rgba(0,0,0,0.6);
+  border-radius: 6px;
 }
 
 .menu__list li {
-  margin: 0.3rem 0;
+  margin: 0.4rem 0;
 }
 
 .menu__list a {
-  color: #8fcb8c;
+  color: var(--gc-accent);
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
 .menu__list a:hover {
-  text-decoration: underline;
+  color: var(--gc-lightgreen);
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero__card {
+  background: rgba(33, 65, 43, 0.92);
+  border: 2px solid var(--gc-green);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.hero__card h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--gc-accent);
+}
+
+.hero__card p {
+  margin-bottom: 1.5rem;
+}
+
+/* Badge style */
+.badge {
+  display: inline-block;
+  background: var(--gc-green);
+  color: var(--gc-beige);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Button style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gc-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out, transform 0.15s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  background: var(--gc-lightgreen);
+  transform: scale(1.05);
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* Subtle footer notes */
+.subtle {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.site-footer {
+  background: rgba(15, 35, 22, 0.95);
+  text-align: center;
+  padding: 1rem;
+}
+
+.pines {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 600px) {
+  .hero__card {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero__card h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
